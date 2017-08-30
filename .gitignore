@@ -1,0 +1,4 @@
+/vendor
+/skeleton
+composer.lock
+error_log

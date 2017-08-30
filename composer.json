@@ -1,0 +1,33 @@
+{
+    "name": "rafflesargentina/l5-sluggable",
+    "description": "Unique slug generator for Laravel 5. Clone of Caffeinated Slugs",
+    "keywords": [
+        "slug", "eloquent", "trait", "laravel"
+    ],
+    "homepage": "https://github.com/rafflesargentina/l5-sluggable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mario Patronelli",
+            "email": "mario@raffles.com.ar",
+            "homepage": "http://raffles.com.ar",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.6.4"
+    },
+    "require-dev": {
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RafflesArgentina\\Sluggable\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
