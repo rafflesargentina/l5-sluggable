@@ -16,9 +16,17 @@ trait SluggableTrait
             $slugName  = static::getSlugName();
             $slugField = static::getSlugField();
             $model->$slugField = str_slug($model->$slugName);
-            $latestSlug = static::whereRaw("{$slugField} RLIKE '^{$model->slug}(-[0-9]*)?$'")
+            
+            try {
+                $latestSlug = static::whereRaw("{$slugField} RLIKE '^{$model->slug}(-[0-9]*)?$'")
                 ->latest('id')
                 ->value($slugField);
+            } catch (\Illuminate\Database\QueryException $e) {
+                $latestSlug = static::whereRaw("{$slugField} LIKE '^{$model->slug}(-[0-9]*)?$'")
+                ->latest('id')
+                ->value($slugField);
+            }
+            
             if ($latestSlug) {
                 $pieces = explode('-', $latestSlug);
                 $number = intval(end($pieces));
