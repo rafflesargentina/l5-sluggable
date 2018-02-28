@@ -18,7 +18,8 @@
         "php" : ">=5.6.4"
     },
     "require-dev": {
-        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*"
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*",
+        "apigen/apigen": "^v2.8"
     },
     "autoload": {
         "psr-4": {
